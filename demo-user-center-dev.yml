@@ -1,17 +1,13 @@
-##添加eureka地址
-eureka:
-  client:
-    service-url:
-      # 指定eureka server通信地址，注意/eureka/小尾巴不能少
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    # 是否注册IP到eureka server，如不指定或设为false，那就会注册主机名到eureka server
+--- 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: "http://localhost:8761/eureka/"
+  instance: 
     prefer-ip-address: true
-
-##配置zipkin地址
-spring:
-  zipkin:
-    base-url: http://localhost:9588
-  sleuth:
-    sampler:
+spring: 
+  sleuth: 
+    sampler: 
       probability: 1.0
+  zipkin: 
+    base-url: "http://localhost:9588"
