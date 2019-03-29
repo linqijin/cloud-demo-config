@@ -33,3 +33,7 @@ zuul:
 endpoints:
   routes:
     sensitive: false
+    
+logging:
+  level:
+    com.landi.cloud.zuulserver.feign.UserCenterFeignClient: debug
