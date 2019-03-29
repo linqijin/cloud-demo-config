@@ -30,3 +30,6 @@ zuul:
    demo-content-center: /content-center/**
    demo-user-center: /user-center/**
    demo-bonus-center: /bonus-center/**
+endpoints:
+  routes:
+    sensitive: false
