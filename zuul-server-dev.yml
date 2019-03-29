@@ -1,0 +1,35 @@
+keycloak:
+  public-client: true
+  auth-server-url: http://localhost:8080/auth
+  realm: realm
+  resource: zuul-server
+  # ssl-required: external
+  securityConstraints:
+  - authRoles:
+    - user-role
+    securityCollections:
+    - name: user-role-mappings
+      patterns:
+      - /ms-content-sample/articles
+      - /ms-consumer-sample/articles
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+zuul:
+  routes:
+   demo-content-center: /content-center/**
+   demo-user-center: /user-center/**
+   demo-bonus-center: /bonus-center/**
+endpoints:
+  routes:
+    sensitive: false
