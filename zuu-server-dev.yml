@@ -25,3 +25,8 @@ management:
   endpoint:
     health:
       show-details: always
+zuul:
+  routes:
+   demo-content-center: /content-center/**
+   demo-user-center: /user-center/**
+   demo-bonus-center: /bonus-center/**
